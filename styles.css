@@ -1,0 +1,460 @@
+:root{
+    --dark-blue: hsl(233, 26%, 24%);
+    --lime-green: hsl(136, 65%, 51%);
+    --bright-cyan: hsl(192, 70%, 51%);
+
+    --green-cyan-gradient: linear-gradient(135deg, hsl(136, 65%, 51%), hsl(192, 70%, 51%));
+
+    --grayish-blue: hsl(233, 8%, 62%);
+    --light-grayish-blue: hsl(220, 16%, 96%);
+    --very-light-gray: hsl(0, 0%, 98%);
+    --white: hsl(0, 0%, 100%);
+}
+
+*, *::before, *::after{
+    box-sizing: border-box;
+    list-style: none;
+    font-family: 'Public Sans', sans-serif;
+    padding: 0;
+    border: none;
+    margin: 0;
+}
+
+body{
+    overflow-x: hidden;
+}
+
+
+/* __________nav__________ */
+nav{
+    display: flex;
+    background: var(--white);
+    width: 100%;
+
+    padding: 0.4em 10%;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+.scrolling-active{
+    height: 4em;
+    padding: 0 8%;
+}
+
+nav img{
+    margin: auto 0;
+}
+
+.menu-container{
+    display: flex;
+    width: 100%;
+}
+
+nav ul{
+    display: flex;
+    gap: 1em;
+    margin: auto;
+}
+
+nav li{
+    color: var(--grayish-blue);
+    cursor: pointer;
+}
+
+nav li:hover{
+    color: var(--dark-blue);
+}
+
+nav button{
+    background: var(--green-cyan-gradient);
+    color: var(--white);
+    font-weight: 700;
+    cursor: pointer;
+
+    padding: 1em 1.6em;
+    border-radius: 1.6em;
+    margin: auto 0;
+}
+
+.menu-bg{
+    background: hsla(0, 0%, 0%, 0.4);
+    display: none;
+    width: 100%;
+    height: 100vh;
+    
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+/* _______menu_______ */
+.nav-menu{
+    display: none;
+    margin: auto 0 auto auto;
+}
+
+.close, #nav-menu{
+    display: none;
+}
+
+#nav-menu:checked ~ .nav-menu .close{
+    display: inline;
+}
+#nav-menu:checked ~ .nav-menu .hamburger{
+    display: none;
+}
+#nav-menu:checked ~ div{
+    display: flex;
+}
+
+
+/* __________main__________ */
+main{
+    background: var(--very-light-gray);
+}
+
+/* _______Introduction section_______ */
+.intro-sect{
+    padding: 12em 10%;
+    position: relative;
+}
+.intro-sect::before{
+    content: "";
+    background: url(images/bg-intro-desktop.svg)
+                left top -15em no-repeat;
+    background-size: 150vh;
+
+    width: 55%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.intro-sect::after{
+    content: "";
+    background: url(images/image-mockups.png)
+                top -7em right -7em no-repeat;
+    background-size: 93vh;
+
+    width: 55%;
+    height: 125%;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.intro-sect h1{
+    color: var(--dark-blue);
+    font-size: 42px;
+    font-weight: 400;
+    width: 10em;
+    margin-bottom: 0.4em;
+}
+
+.intro-sect p{
+    color: var(--grayish-blue);
+    width: 25em;
+}
+
+.intro-sect button{
+    background: var(--green-cyan-gradient);
+    color: var(--white);
+    cursor: pointer;
+
+    padding: 0.8em 1.6em;
+    border-radius: 1.6em;
+    margin-top: 2em;
+}
+
+/* _______easy bank_______ */
+.easybank{
+    background: var(--light-grayish-blue);
+    display: grid;
+    grid-template-columns: repeat(4, 21%);
+    gap: 3em 4%;
+    padding: 6em 10%;
+}
+
+.easybank > header{
+    grid-column: span 4;
+    width: 36em;
+}
+
+.easybank h2{
+    color: var(--dark-blue);
+    font-size: 32px;
+    font-weight: 400;
+    margin-bottom: 0.2em;
+}
+
+.easybank p{
+    color: var(--grayish-blue);
+}
+
+.easybank img{
+    width: 25%;
+}
+
+.easybank h3{
+    color: var(--dark-blue);
+    font-size: 20px;
+    font-weight: 400;
+    margin: 0.8em 0 0.4em;
+}
+
+/* _______articles_______ */
+.articles{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2%;
+    padding: 6em 10%;
+}
+
+.articles > h2{
+    color: var(--dark-blue);
+    grid-column: span 4;
+    font-size: 32px;
+    font-weight: 400;
+    margin-bottom: 1em;
+}
+
+.articles > div{
+    background: var(--white);
+    cursor: pointer;
+    padding-bottom: 2em;
+    border-radius: 0.6em;
+    overflow: hidden;
+}
+
+.articles img{
+    width: 100%;
+    height: 45%;
+    margin-bottom: 1em;
+}
+
+.articles p{
+    color: var(--grayish-blue);
+    margin: 0 10%;
+}
+
+.articles h3{
+    color: var(--dark-blue);
+    font-weight: 400;
+    cursor: pointer;
+    margin: 0.4em 10%;
+}
+
+.articles h3:hover{
+    color: var(--lime-green);
+}
+
+
+/* __________footer__________ */
+footer{
+    background: var(--dark-blue);
+    color: var(--white);
+    display: flex;
+    gap: 15%;
+    padding: 4em 10%;
+}
+
+footer > div{
+    display: flex;
+    flex-direction: column;
+    gap: 0.4em;
+}
+
+.icons{
+    display: flex;
+    gap: 5%;
+    margin-top: 1em;
+}
+
+.info p:hover{
+    cursor: pointer;
+    color: var(--lime-green);
+}
+
+footer button{
+    background: var(--green-cyan-gradient);
+    color: var(--white);
+    cursor: pointer;
+    padding: 0.8em 1.6em;
+    border-radius: 1.6em;
+    margin-left: auto;
+}
+
+.rights{
+    color: var(--grayish-blue);
+}
+
+
+
+@media(max-width: 1280px){
+    /* __________main__________ */
+    /* _______Introduction section_______ */
+    .intro-sect{
+        padding: 6em 10%;
+    }
+    .intro-sect::before{
+        background-size: 110vh;
+        background-position: left;
+        width: 50%;
+    }
+    .intro-sect::after{
+        background-size: 70vh;
+        background-position: left bottom;
+        width: 40%;
+    }
+    /* _______easy bank_______ */
+    .easybank{
+        grid-template-columns: repeat(2, 18em);
+        justify-content: center;
+        padding: 6em auto;
+    }
+    .easybank > header{
+        grid-column: span 2;
+    }
+    /* _______articles_______ */
+    .articles{
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.2em;
+
+        width: 38em;
+        height: 58em;
+        padding: 5% 0;
+        margin: 0 auto;
+    }
+    .articles>h2{
+        grid-column: span 2;
+        margin: 0;
+    }
+    .articles>div{
+        padding: 0;
+    }
+    /* __________footer__________ */
+    footer{
+        display: grid;
+        grid-template-columns: repeat(2, 16em);
+        justify-content: center;
+        gap: 1.4em 3em;
+    }
+    .logo-N-medias, .request-N-rights{
+        display: grid;
+        grid-template-columns: repeat(2, 16em);
+        grid-column: span 2;
+        gap: 3em;
+        width: auto;
+    }
+    .icons{
+        margin: auto 0;
+    }
+    footer button{
+        margin: auto auto auto 0;
+    }
+    .rights{
+        margin: auto 0;
+    }
+}
+
+@media(max-width: 920px){
+    /* __________nav__________ */
+    .menu-container{
+        display: none;
+    }
+    .nav-menu{
+        display: block;
+    }
+    .menu-container{
+        background: var(--white);
+        text-align: center;
+        width: 80%;
+        padding: 2em 0;
+        border-radius: 0.6em;
+
+        position: absolute;
+        top: 5em;
+        left: 50%;
+        transform: translate(-50%);
+    }
+    nav ul{
+        flex-direction: column;
+    }
+    nav li{
+        color: var(--dark-blue);
+    }
+    nav button{
+        display: none;
+    }
+    /* __________main__________ */
+    /* _______Introduction section_______ */
+    .intro-sect{
+        text-align: center;
+        padding: 94% 0 2em;
+    }
+    .intro-sect::before{
+        background: url(images/bg-intro-mobile.svg)
+                    no-repeat center top;
+        background-size: 100%;
+        width: 100%;
+    }
+    .intro-sect::after{
+        background-size: 90%;
+        background-position: center top -8.2em;
+        width: 100%;
+    }
+    .intro-sect>h1, .intro-sect>p{
+        margin: 0 auto;
+    }
+    /* _______easy bank_______ */
+    .easybank{
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    .easybank > header{
+        grid-column: 1;
+        width: 100%;
+    }
+    .easybank h2{
+        font-size: 34px;
+    }
+    .easybank img{
+        width: 6em;
+    }
+    /* _______articles_______ */
+    .articles{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+
+        width: 24em;
+        height: 120em;
+        padding: 6em 0;
+    }
+    .articles > h2{
+        grid-column: 1;
+    }
+    /* __________footer__________ */
+    footer{
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+        text-align: center;
+    }
+    .logo-N-medias, .request-N-rights{
+        display: flex;
+        gap: 1em;
+    }
+    .logo{
+        height: 1.8em;
+        margin: 0 auto;
+    }
+    .icons{
+        margin: 0 auto;
+    }
+    footer button{
+        margin: 0 auto;
+    }
+}
